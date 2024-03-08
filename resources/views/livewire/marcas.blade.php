@@ -36,7 +36,7 @@
                 <!-- <button wire:click="crear">Guardar</button>
                 <button wire:click="limpiar">Cancelar</button> -->
             @else
-                <button wire:click="nuevo" class="btn btn-info">Nuevo</button>
+                <button wire:click="nuevo" class="btn btn_nuevo">Nuevo</button>
             @endif
         
         @endif

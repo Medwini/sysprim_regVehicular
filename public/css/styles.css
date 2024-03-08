@@ -1,0 +1,54 @@
+:root{
+    --principal: #009988;
+}
+*{
+    font-family: "Questrial", sans-serif;
+}
+
+/* NAVEGACION */
+
+.btn-nav{
+    border: 1px solid var(--principal);
+    color: var(--principal);
+    font-size: 1em;
+}
+
+.btn-nav:hover{
+    border: 1px solid var(--principal);
+    color: var(--principal);
+    background-color: var(--principal);
+    color: lightcyan;
+}
+
+/* CONTENEDOR DE MENU PARA MODULOS */
+
+.cont_titulo{
+    display: flex;
+    margin: 1rem 3rem;
+    justify-content: center;
+}
+
+.titulo{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000;
+    text-shadow: 2px 2px 3px var(--principal);
+}
+
+.btn_nuevo{
+    width: 100%;
+    display: flex;
+    border: 1px solid var(--principal);
+    justify-content: center;
+    color: var(--principal);
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.btn_nuevo:hover{
+    border: 1px solid var(--principal);
+    justify-content: center;
+    background-color: var(--principal);
+    color: lightcyan;
+}
+

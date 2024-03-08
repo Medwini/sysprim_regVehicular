@@ -14,8 +14,8 @@
                 <path d="M22 19l-3 -3l-3 3" />
                 </svg>
             </a>
-            <a href="/marcas" class="btn btn-outline-info me-2 fw-bold">Marcas</a>
-            <a href="/vehiculos" class="btn btn-outline-info me-2 fw-bold">Vehiculos</a>
+            <a href="/marcas" class="btn me-2 fw-bold btn-nav">Marcas</a>
+            <a href="/vehiculos" class="btn me-2 fw-bold btn-nav">Vehiculos</a>
         </div>
     </nav>
     <livewire:modelos />
