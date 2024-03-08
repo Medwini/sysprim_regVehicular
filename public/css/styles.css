@@ -1,6 +1,8 @@
 :root{
     --principal: #009988;
     --bordes_tablas: #000000;
+    --color_exito:#048100;
+    --color_error:#800000;
 }
 *{
     font-family: "Questrial", sans-serif;
@@ -59,6 +61,19 @@
     justify-content: center;
     background-color: var(--principal);
     color: lightcyan;
+}
+
+/* MENSAJES */
+
+.error_m{
+    color: var(--color_error);
+    font-size: 1em;
+}
+
+.msg-crud{
+    text-align: center;
+    color: var(--color_exito);
+    font-size: 1em;
 }
 
 /* TABLAS */

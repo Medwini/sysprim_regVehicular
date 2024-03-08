@@ -12,7 +12,7 @@
                     <button class="btn btn-outline-secondary" wire:click="cancelar_edit">Cancelar</button>
                 </div>
                 @error('valor_edit')
-                    <p>{{ $message }}</p>
+                    <p class="error_m">• {{ $message }}</p>
                 @enderror
                 @endif
             @endif
@@ -25,13 +25,13 @@
                     <button class="btn btn-outline-secondary" wire:click="limpiar">Cancelar</button>
                 </div>
                 @error('valor')
-                    <p>{{ $message }}</p>
+                    <p class="error_m">• {{ $message }}</p>
                 @enderror
             @else
                 <button wire:click="nuevo" class="btn btn_nuevo">Nuevo</button>
             @endif
         @endif
-        <p class="my-3">{{ $mensaje }}</p>
+        <p class="my-3 msg-crud">{{ $mensaje }}</p>
     </div>
 
     <div class="container">

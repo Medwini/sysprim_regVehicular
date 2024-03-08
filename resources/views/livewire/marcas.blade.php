@@ -14,7 +14,7 @@
                     </div>
                     <!-- <input type="text" wire:model="valor_edit"/> -->
                     @error('valor_edit')
-                        <p>{{ $message }}</p>
+                        <p class="error_m">• {{ $message }}</p>
                     @enderror
                     <!-- <button wire:click="editar({{ $marca->id }})">Guardar</button>
                     <button wire:click="cancelar_edit">Cancelar</button> -->
@@ -30,7 +30,7 @@
                 </div>
                 <!-- <input type="text" wire:model="valor" /> -->
                 @error('valor')
-                    <p>{{ $message }}</p>
+                    <p class="error_m">• {{ $message }}</p>
                 @enderror
 
                 <!-- <button wire:click="crear">Guardar</button>
@@ -40,7 +40,7 @@
             @endif
         
         @endif
-        <p class="my-3">{{ $mensaje }}</p>
+        <p class="my-3 msg-crud">{{ $mensaje }}</p>
     </div>
 
 

@@ -21,28 +21,28 @@
                         <!-- <label for="">Placa:</label>
                         <input type="text" wire:model="edit_placa" class="form-control" /> -->
                         @error('edit_placa')
-                            <p class="error_m">{{ $message }}</p>
+                            <p class="error_m">• {{ $message }}</p>
                         @enderror
                         <div class="input-group flex-nowrap my-3">
                             <span class="input-group-text" id="addon-wrapping">Año:</span>
                             <input type="text" wire:model="edit_anio" class="form-control" aria-describedby="addon-wrapping">
                         </div>
                         @error('edit_anio')
-                            <p class="error_m">{{ $message }}</p>
+                            <p class="error_m">• {{ $message }}</p>
                         @enderror
                         <div class="input-group flex-nowrap my-3">
                             <span class="input-group-text" id="addon-wrapping">Color:</span>
                             <input type="text" wire:model="edit_color" class="form-control" aria-describedby="addon-wrapping">
                         </div>
                         @error('edit_color')
-                            <p class="error_m">{{ $message }}</p>
+                            <p class="error_m">• {{ $message }}</p>
                         @enderror
                         <div class="input-group flex-nowrap my-3">
                             <span class="input-group-text" id="addon-wrapping">Fecha Ingreso:</span>
                             <input type="text" wire:model="edit_fecha_ing" class="form-control" aria-describedby="addon-wrapping">
                         </div>
                         @error('edit_fecha_ing')
-                            <p class="error_m">{{ $message }}</p>
+                            <p class="error_m">• {{ $message }}</p>
                         @enderror
 
                         <div class="input-group mb-3">
@@ -56,7 +56,7 @@
                         </div>
 
                         @error('edit_marca')
-                            <p class="error_m">{{ $message }}</p>
+                            <p class="error_m">• {{ $message }}</p>
                         @enderror
 
                         <div class="input-group mb-3">
@@ -71,7 +71,7 @@
     
                         
                         @error('edit_modelo')
-                            <p class="error_m">{{ $message }}</p>
+                            <p class="error_m">• {{ $message }}</p>
                         @enderror
     
                         <button type="submit" class="btn btn-success">Guardar</button>
@@ -93,21 +93,21 @@
                     <input type="text" wire:model="valor_placa" class="form-control" aria-describedby="addon-wrapping">
                 </div>
                 @error('valor_placa')
-                    <p class="error_m">{{ $message }}</p>
+                    <p class="error_m">• {{ $message }}</p>
                 @enderror
                 <div class="input-group flex-nowrap my-3">
                     <span class="input-group-text" id="addon-wrapping">Año:</span>
                     <input type="text" wire:model="valor_anio" class="form-control" aria-describedby="addon-wrapping">
                 </div>
                 @error('valor_anio')
-                    <p class="error_m">{{ $message }}</p>
+                    <p class="error_m">• {{ $message }}</p>
                 @enderror
                 <div class="input-group flex-nowrap my-3">
                     <span class="input-group-text" id="addon-wrapping">Color:</span>
                     <input type="text" wire:model="valor_color" class="form-control" aria-describedby="addon-wrapping">
                 </div>
                 @error('valor_color')
-                    <p class="error_m">{{ $message }}</p>
+                    <p class="error_m">• {{ $message }}</p>
                 @enderror
 
                 <div class="input-group flex-nowrap my-3">
@@ -116,7 +116,7 @@
                 </div>
 
                 @error('valor_fecha_ing')
-                    <p class="error_m">{{ $message }}</p>
+                    <p class="error_m">• {{ $message }}</p>
                 @enderror
                 
                 <div class="input-group mb-3">
@@ -130,7 +130,7 @@
                 </div>
 
                 @error('valor_marca')
-                    <p class="error_m">{{ $message }}</p>
+                    <p class="error_m">• {{ $message }}</p>
                 @enderror
 
                 <div class="input-group mb-3">
@@ -144,7 +144,7 @@
                 </div>
     
                 @error('valor_modelo')
-                    <p class="error_m">{{ $message }}</p>
+                    <p class="error_m">• {{ $message }}</p>
                 @enderror
     
                 <button type="submit" class="btn btn-success">Guardar</button>
@@ -155,7 +155,7 @@
             @endif
         @endif
 
-        <p class="my-3">{{ $mensaje }}</p>
+        <p class="my-3 msg-crud">{{ $mensaje }}</p>
     </div>
 
     <div class="container">
