@@ -3,9 +3,9 @@
 @section('title', 'Sysprim - Inicio')
 
 @section('content')
-    <div>
+    <nav>
         <a href="/marcas">Marcas</a>
         <a href="/modelos">Modelos</a>
         <a href="/vehiculos">Vehiculos</a>
-    </div>
+    </nav>
 @endsection
