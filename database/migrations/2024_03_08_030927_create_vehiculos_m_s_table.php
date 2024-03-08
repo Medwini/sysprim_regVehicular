@@ -17,8 +17,8 @@ return new class extends Migration
             $table->integer("anio");
             $table->string("color");
             $table->string("fecha_ing");
-            $table->string("marca");
-            $table->string("modelo");
+            $table->integer("marca");
+            $table->integer("modelo");
             $table->timestamps();
         });
     }

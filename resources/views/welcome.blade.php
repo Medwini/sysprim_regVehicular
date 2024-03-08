@@ -5,4 +5,5 @@
 @section('content')
     <livewire:marcas />
     <livewire:modelos />
+    <livewire:vehiculos />
 @endsection

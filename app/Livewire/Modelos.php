@@ -41,6 +41,10 @@ class Modelos extends Component
         $this->id_editar = $id;
     }
 
+    public function cancelar_edit(){
+        $this->edit = false;
+    }
+
 
     public function render()
     {
