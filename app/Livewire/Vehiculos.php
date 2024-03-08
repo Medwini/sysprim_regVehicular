@@ -27,8 +27,47 @@ class Vehiculos extends Component
     public $mensaje = "";
     public $edit = false;
     public $id_editar = 0;
+    public $mensaje_a ="";
+
+    protected $rules = [
+        "valor_placa" => 'required|min:4|unique:vehiculos_m_s,placa',
+        "valor_anio" => 'required|min:4|max:4',
+        "valor_color" => 'required|min:2',
+        "valor_fecha_ing" => 'required|min:4',
+        "valor_marca" => 'required',
+        "valor_modelo" => 'required'
+    ];
+
+
+    protected $messages = [
+        'unique' => 'Este valor ya existe.',
+        'required' => 'El campo no puede estar vacío.',
+        'min' => 'El campo posee pocos carácteres.',
+        'max' => 'El campo posee demasiados carácteres.',
+    ];
+
+    public function limpiar(){
+        $this->reset([
+            'edit', 
+            'id_editar', 
+            'valor_placa',
+            'valor_anio',
+            'valor_color',
+            'valor_fecha_ing',
+            'valor_marca',
+            'valor_modelo',
+            'edit_placa',
+            'edit_anio',
+            'edit_color',
+            'edit_fecha_ing',
+            'edit_marca',
+            'edit_modelo'
+        ]);
+    }
 
     public function crear(){
+        $this->validate();
+
         VehiculosM::create(
             [
                 "placa" => $this->valor_placa,
@@ -37,13 +76,14 @@ class Vehiculos extends Component
                 "fecha_ing" => $this->valor_fecha_ing,
                 "marca" => $this->valor_marca,
                 "modelo" => $this->valor_modelo
-
             ]
         );
         $this->mensaje = "Vehiculo registrado exitosamente";
+        $this->limpiar();
     }
 
     public function editar($id){
+
         $ConsultaVehiculos = VehiculosM::find($id);
 
         $ConsultaVehiculos->placa = $this->edit_placa;
@@ -55,7 +95,7 @@ class Vehiculos extends Component
 
         $ConsultaVehiculos->save();
         $this->mensaje = "Vehiculo actualizado exitosamente";
-        $this->edit = false;
+        $this->limpiar();
     }
 
     public function eliminar($id){
@@ -66,10 +106,19 @@ class Vehiculos extends Component
     public function hab_edit($id){
         $this->edit = true;
         $this->id_editar = $id;
+        $ConsultaVehiculos = VehiculosM::find($id);
+
+        $this->edit_placa = $ConsultaVehiculos->placa;
+        $this->edit_anio = $ConsultaVehiculos->anio;
+        $this->edit_color = $ConsultaVehiculos->color;
+        $this->edit_fecha_ing = $ConsultaVehiculos->fecha_ing;
+        $this->edit_marca = $ConsultaVehiculos->marca;
+        $this->edit_modelo = $ConsultaVehiculos->modelo;
     }
 
     public function cancelar_edit(){
-        $this->edit = false;
+        $this->limpiar();
+        $this->mensaje = "";
     }
     
 

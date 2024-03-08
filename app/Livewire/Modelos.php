@@ -14,6 +14,10 @@ class Modelos extends Component
     public $edit = false;
     public $id_editar = 0;
 
+    public function limpiar(){
+        $this->reset(['edit', 'id_editar', 'valor', 'valor_edit']);
+    }
+
     public function crear(){
         ModelosM::create(
             [
@@ -21,6 +25,7 @@ class Modelos extends Component
             ]
         );
         $this->mensaje = "Modelo registrado exitosamente";
+        $this->limpiar();
     }
 
     public function editar($id){
@@ -28,7 +33,7 @@ class Modelos extends Component
         $ConsultaModelos->descripcion = $this->valor_edit;
         $ConsultaModelos->save();
         $this->mensaje = "Modelo actualizado exitosamente";
-        $this->edit = false;
+        $this->limpiar();
     }
 
     public function eliminar($id){
@@ -39,6 +44,8 @@ class Modelos extends Component
     public function hab_edit($id){
         $this->edit = true;
         $this->id_editar = $id;
+        $ConsultaModelos = ModelosM::find($id);
+        $this->valor_edit = $ConsultaModelos->descripcion;
     }
 
     public function cancelar_edit(){
