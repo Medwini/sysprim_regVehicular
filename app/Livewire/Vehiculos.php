@@ -2,6 +2,8 @@
 
 namespace App\Livewire;
 
+use Illuminate\Support\Facades\DB;
+
 use Livewire\Component;
 use App\Models\MarcasM;
 use App\Models\ModelosM;
@@ -26,6 +28,7 @@ class Vehiculos extends Component
 
     public $mensaje = "";
     public $edit = false;
+    public $new = false;
     public $id_editar = 0;
     public $mensaje_a ="";
 
@@ -61,8 +64,13 @@ class Vehiculos extends Component
             'edit_color',
             'edit_fecha_ing',
             'edit_marca',
-            'edit_modelo'
+            'edit_modelo',
+            'new'
         ]);
+    }
+
+    public function nuevo(){
+        $this->new = true;
     }
 
     public function crear(){
@@ -83,6 +91,14 @@ class Vehiculos extends Component
     }
 
     public function editar($id){
+        $this->validate([   
+            "edit_placa" => 'required|min:4',
+            "edit_anio" => 'required|min:4|max:4',
+            "edit_color" => 'required|min:2',
+            "edit_fecha_ing" => 'required|min:4',
+            "edit_marca" => 'required',
+            "edit_modelo" => 'required'
+        ]);
 
         $ConsultaVehiculos = VehiculosM::find($id);
 
@@ -132,7 +148,8 @@ class Vehiculos extends Component
             'marcas' => $marcas,
             'modelos' => $modelos,
             'edit' => $this->edit,
-            'id_editar' => $this->id_editar
+            'id_editar' => $this->id_editar,
+            'nuevo' => $this->new
         ]);
     }
 }

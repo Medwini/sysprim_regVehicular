@@ -13,12 +13,33 @@ class Modelos extends Component
     public $mensaje = "";
     public $edit = false;
     public $id_editar = 0;
+    public $new = false;
+
+    protected $rules = [
+        "valor" => 'required|min:4|unique:marcas_m_s,descripcion',
+    ];
+
+
+    protected $messages = [
+        'unique' => 'Este valor ya existe.',
+        'required' => 'El campo no puede estar vacío.',
+        'min' => 'El campo posee pocos carácteres.',
+        'max' => 'El campo posee demasiados carácteres.',
+    ];
 
     public function limpiar(){
-        $this->reset(['edit', 'id_editar', 'valor', 'valor_edit']);
+        $this->reset(['edit', 'id_editar', 'valor', 'valor_edit', 'new']);
+    }
+
+    public function nuevo(){
+        $this->new = true;
     }
 
     public function crear(){
+        $this->validate([   
+            "valor" => 'required|min:4|unique:marcas_m_s,descripcion'
+        ]);
+
         ModelosM::create(
             [
                 "descripcion" => $this->valor
@@ -29,6 +50,10 @@ class Modelos extends Component
     }
 
     public function editar($id){
+        $this->validate([   
+            "valor_edit" => 'required|min:4|unique:marcas_m_s,descripcion'
+        ]);
+
         $ConsultaModelos = ModelosM::find($id);
         $ConsultaModelos->descripcion = $this->valor_edit;
         $ConsultaModelos->save();
@@ -59,7 +84,8 @@ class Modelos extends Component
         return view('livewire.modelos', [
             'modelos' => $modelos,
             'edit' => $this->edit,
-            'id_editar' => $this->id_editar
+            'id_editar' => $this->id_editar,
+            'nuevo' => $this->new
         ]);
     }
 }
