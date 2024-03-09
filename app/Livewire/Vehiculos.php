@@ -71,10 +71,12 @@ class Vehiculos extends Component
     }
 
     public function nuevo(){
+        $this->mensaje = "";
         $this->new = true;
     }
 
     public function crear(){
+        $this->mensaje = "";
         $this->validate();
 
         VehiculosM::create(
@@ -92,6 +94,7 @@ class Vehiculos extends Component
     }
 
     public function editar($id){
+        $this->mensaje = "";
         $this->validate([   
             "edit_placa" => 'required|min:4',
             "edit_anio" => 'required|integer|min:4',
@@ -116,11 +119,13 @@ class Vehiculos extends Component
     }
 
     public function eliminar($id){
+        $this->mensaje = "";
         VehiculosM::destroy($id);
         $this->mensaje = "Vehiculo eliminado exitosamente";
     }
 
     public function hab_edit($id){
+        $this->mensaje = "";
         $this->edit = true;
         $this->id_editar = $id;
         $ConsultaVehiculos = VehiculosM::find($id);

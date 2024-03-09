@@ -32,10 +32,12 @@ class Modelos extends Component
     }
 
     public function nuevo(){
+        $this->mensaje = "";
         $this->new = true;
     }
 
     public function crear(){
+        $this->mensaje = "";
         $this->validate([   
             "valor" => 'required|min:4|unique:marcas_m_s,descripcion'
         ]);
@@ -50,6 +52,7 @@ class Modelos extends Component
     }
 
     public function editar($id){
+        $this->mensaje = "";
         $this->validate([   
             "valor_edit" => 'required|min:4|unique:marcas_m_s,descripcion'
         ]);
@@ -62,11 +65,13 @@ class Modelos extends Component
     }
 
     public function eliminar($id){
+        $this->mensaje = "";
         ModelosM::destroy($id);
         $this->mensaje = "Modelo eliminada exitosamente";
     }
 
     public function hab_edit($id){
+        $this->mensaje = "";
         $this->edit = true;
         $this->id_editar = $id;
         $ConsultaModelos = ModelosM::find($id);
@@ -74,6 +79,7 @@ class Modelos extends Component
     }
 
     public function cancelar_edit(){
+        $this->mensaje = "";
         $this->edit = false;
     }
 

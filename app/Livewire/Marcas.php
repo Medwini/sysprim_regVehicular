@@ -32,10 +32,12 @@ class Marcas extends Component
     }
 
     public function nuevo(){
+        $this->mensaje = "";
         $this->new = true;
     }
 
     public function crear(){
+        $this->mensaje = "";
         $this->validate([   
             "valor" => 'required|min:4|unique:marcas_m_s,descripcion'
         ]);
@@ -50,7 +52,7 @@ class Marcas extends Component
     }
 
     public function editar($id){
-
+        $this->mensaje = "";
         $this->validate([   
             "valor_edit" => 'required|min:4|unique:marcas_m_s,descripcion'
         ]);
@@ -63,11 +65,13 @@ class Marcas extends Component
     }
 
     public function eliminar($id){
+        $this->mensaje = "";
         MarcasM::destroy($id);
         $this->mensaje = "Marca eliminada exitosamente";
     }
 
     public function hab_edit($id){
+        $this->mensaje = "";
         $this->edit = true;
         $this->id_editar = $id;
         $ConsultaMarcas = MarcasM::find($id);
