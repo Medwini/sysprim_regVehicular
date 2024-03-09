@@ -34,7 +34,7 @@ class Vehiculos extends Component
 
     protected $rules = [
         "valor_placa" => 'required|min:4|unique:vehiculos_m_s,placa',
-        "valor_anio" => 'required|integer|min:4|max:4',
+        "valor_anio" => 'required|integer|min:4',
         "valor_color" => 'required|min:2',
         "valor_fecha_ing" => 'required|min:4',
         "valor_marca" => 'required',
@@ -94,7 +94,7 @@ class Vehiculos extends Component
     public function editar($id){
         $this->validate([   
             "edit_placa" => 'required|min:4',
-            "edit_anio" => 'required|integer|min:4|max:4',
+            "edit_anio" => 'required|integer|min:4',
             "edit_color" => 'required|min:2',
             "edit_fecha_ing" => 'required|min:4',
             "edit_marca" => 'required',
