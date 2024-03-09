@@ -48,7 +48,7 @@
                         <div class="input-group mb-3">
                             <label class="input-group-text" for="inputGroupSelect01">Marca:</label>
                             <select class="form-select" wire:model="edit_marca"  id="inputGroupSelect01">
-                                <option value="-" selected>Seleccione...</option>
+                                <option value="0" selected>Seleccione...</option>
                                 @foreach($marcas as $marca)
                                     <option value="{{$marca->id}}">{{$marca->descripcion}}</option>
                                 @endforeach
@@ -62,7 +62,7 @@
                         <div class="input-group mb-3">
                             <label class="input-group-text" for="inputGroupSelect01">Modelo:</label>
                             <select class="form-select" wire:model="edit_modelo" id="inputGroupSelect01">
-                                <option value="-" selected>Seleccione...</option>
+                                <option value="0" selected>Seleccione...</option>
                                 @foreach($modelos as $modelo)
                                     <option value="{{$modelo->id}}">{{$modelo->descripcion}}</option>
                                 @endforeach
@@ -122,7 +122,7 @@
                 <div class="input-group mb-3">
                     <label class="input-group-text" for="inputGroupSelect01">Marca:</label>
                     <select class="form-select" wire:model="valor_marca" id="inputGroupSelect01">
-                        <option value="-" selected>Seleccione...</option>
+                        <option value="0" selected>Seleccione...</option>
                         @foreach($marcas as $marca)
                             <option value="{{$marca->id}}">{{$marca->descripcion}}</option>
                         @endforeach
@@ -136,7 +136,7 @@
                 <div class="input-group mb-3">
                     <label class="input-group-text" for="inputGroupSelect01">Modelo:</label>
                     <select class="form-select" wire:model="valor_modelo" id="inputGroupSelect01">
-                        <option value="-" selected>Seleccione...</option>
+                        <option value="0" selected>Seleccione...</option>
                         @foreach($modelos as $modelo)
                             <option value="{{$modelo->id}}">{{$modelo->descripcion}}</option>
                         @endforeach
