@@ -5,6 +5,10 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+use App\Models\MarcasM;
+use App\Models\ModelosM;
+use App\Models\VehiculosM;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -18,5 +22,9 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        MarcasM::factory(8)->create();
+        ModelosM::factory(8)->create();
+        VehiculosM::factory(10)->create();
     }
 }
